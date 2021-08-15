@@ -1,19 +1,30 @@
 
 
 +--------------------------------------+
-| Tables_in_service_provider |
+| Tables_in_service_provider           |
 +--------------------------------------+
-| booking_details                  |
-| city                                    |
-| service_provider_details     |
-| services                              |
-| user_details                        |
+| booking_details                      |
+| city                                 |
+| payment                              |
+| service_provider_details             |
+| services                             |
+| user_details                         |
 +--------------------------------------+
 
->>user_details:
+>>>>user_details:
 >> create table user_details (user_ID int auto_increment not null,username varchar(20),password varchar(20),email varchar(30),phone_number varchar(20) , address varchar(40),primary key(user_ID));
->> create table city (city_ID int not null  , city varchar(20));
->> create table services (service_ID int not null primary key , service_name varchar(20));
->> create table service_provider_details (provider_ID int not null primary key , company_name varchar(20) , password varchar(20) , email varchar (20) , phone_number varchar(20), address varchar(20));
->> create table booking_details (booking_ID int not null auto_increment primary key , username varchar(20) , service_name varchar(20), schedule_date varchar(20) , schedule_time varchar(20) , provider_ID int , rating_for_user int,ratings_for_service int , service_review varchar(50));
 
+>>>>city:
+>> create table city (city_ID int not null  , city varchar(20));
+
+>>>>services:
+>> create table services (service_ID int not null primary key , service_name varchar(20));
+
+>>>>service_provider_details:
+>> create table service_provider_details (provider_ID int not null primary key , company_name varchar(20) , password varchar(20) , email varchar (20) , phone_number varchar(20), address varchar(20));
+
+>>>>booking_details:
+>> create table booking_details (booking_ID int not null auto_increment primary key , user_ID int,username varchar(20) , service_name varchar(20), schedule_date varchar(20) , schedule_time varchar(20),address varchar(40),city_ID int,service_status varchar(20), provider_ID int , rating_for_user int,ratings_for_service int , service_review varchar(50),booking_time time,booking_date date);
+
+>>>>payment:
+>> create table payment (payment_id int,booking_id int,payment_method varchar(20),account_holder_name varchar(20),account_no bigint,month int,year int,ccv int,payment_time time,payment_date date);
