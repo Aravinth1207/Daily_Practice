@@ -5,7 +5,8 @@ In this i have given the mysql commands to create the tables which i used in thi
 How it works?
     1)In this there is no option for registering user or provider. so we have to make that in mysql by inserting user details and provider details.
     2)First we have to choose login type i.e user and serviceprovider(user is a login type for requesting services and other option for user while the service provider makes the serviceprovider to accept the services and update the serives)
-    3)this program is based on the question which i have given below
+    3)User have to login with their username and Provider have to login with provider ID
+    4)this program is based on the question which i have given below
     
     HOME SERVICES SOLUTION
  
